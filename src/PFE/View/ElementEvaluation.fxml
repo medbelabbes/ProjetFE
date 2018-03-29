@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="PaneData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="434.0" style="-fx-border-color: #00bfff; -fx-border-width: 2.8;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.ElementEvaluationController">
+   <children>
+      <Spinner fx:id="LogicielSPinner" layoutX="292.0" layoutY="66.0" prefHeight="25.0" prefWidth="58.0" />
+      <Label layoutX="47.0" layoutY="68.0" text="CoefficientLogiciel">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="125.0" text="Coefficient Livrable">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="181.0" text="Coefficient Presentation">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="235.0" text="Coefficient Appréciation GLobele">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="291.0" text="Coefficient Appréciation Individuelle">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="AppIndiviSpinner" layoutX="292.0" layoutY="289.0" prefHeight="25.0" prefWidth="58.0" />
+      <Spinner fx:id="AppGLobaleSPinner" layoutX="292.0" layoutY="233.0" prefHeight="25.0" prefWidth="58.0" />
+      <Spinner fx:id="PresentationSpinner" layoutX="292.0" layoutY="179.0" prefHeight="25.0" prefWidth="58.0" />
+      <Spinner fx:id="LivrableSpinner" layoutX="292.0" layoutY="123.0" prefHeight="25.0" prefWidth="58.0" />
+      <JFXButton fx:id="SaveBtn" layoutX="132.0" layoutY="376.0" onAction="#SaveEvaluation" style="-fx-background-color: #00bfff;" text="Enregistrer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="AnnulerBtn" onAction="#Cancel" layoutX="234.0" layoutY="376.0" style="-fx-background-color: #00bfff;" text="Annuler" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

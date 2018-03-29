@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="PaneData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1167.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.GestionEquipeController">
+    <children>
+        <Text fill="DEEPSKYBLUE" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des Equipes">
+            <font>
+                <Font name="Segoe UI Semilight" size="48.0" />
+            </font>
+        </Text>
+        <ScrollPane layoutY="125.0">
+            <content>
+                <TableView fx:id="EquipeTable" onMouseReleased="#ClickTableEquipeItem1" prefHeight="527.0" prefWidth="316.0" stylesheets="@../CSS/TableView.css">
+                    <columns>
+                        <TableColumn fx:id="NumeroEquipeCol" prefWidth="88.0" text="Numéro d'équipe" />
+                        <TableColumn fx:id="NbrEtdEquipeCol" prefWidth="91.0" text="Nombre des étudiants" />
+                        <TableColumn fx:id="MoyenneEquipeCol" prefWidth="63.0" text="Moyenne" />
+                        <TableColumn fx:id="ValiderEquipeCol" prefWidth="89.0" text="Validation" />
+                    </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="ValidermenuItem" mnemonicParsing="false" onAction="#Valider" text="Valider" />
+                        <MenuItem fx:id="DeleteEquipeMenuItem" mnemonicParsing="false" onAction="#DeleteEquipe" text="Supprimer" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+                </TableView>
+            </content>
+        </ScrollPane>
+        <JFXButton fx:id="AddEquipeBtn" layoutX="234.0" layoutY="85.0" onAction="#AddEquipe" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #00bfff;" text="Créer Equipe" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </JFXButton>
+        <ScrollPane layoutX="343.0" layoutY="125.0">
+            <content>
+                <TableView fx:id="TableEtudiant" onMouseReleased="#ClickTableEquipeItem2" prefHeight="527.0" prefWidth="382.0" stylesheets="@../CSS/TableView.css">
+                    <columns>
+                        <TableColumn fx:id="MatriculeEtdCol" prefWidth="63.0" text="Matricule" />
+                        <TableColumn fx:id="NomEtdCol" prefWidth="50.0" text="Nom" />
+                        <TableColumn fx:id="PrenomEtdCol" prefWidth="66.0" text="Prénom" />
+                        <TableColumn fx:id="EmailEtdCol" prefWidth="59.0" text="Email" />
+                        <TableColumn fx:id="MoyenneEtdCol" prefWidth="76.0" text="Moyenne" />
+                        <TableColumn fx:id="GroupeEtdCol" prefWidth="65.0" text="Groupe" />
+                    </columns>
+                </TableView>
+            </content>
+        </ScrollPane>
+        <ScrollPane layoutX="861.0" layoutY="125.0" />
+        <JFXTextField fx:id="ChercherEtudiant" layoutX="351.0" layoutY="85.0" onKeyPressed="#ChercherEtudiant" prefHeight="25.0" prefWidth="180.0" promptText="Chercher" />
+        <JFXComboBox fx:id="PromoCombo" layoutX="466.0" layoutY="40.0" onAction="#LoadData" prefHeight="25.0" prefWidth="180.0" promptText="Promotion" />
+        <JFXButton fx:id="Deletebtn" layoutX="741.0" layoutY="314.0" onAction="#Delete" prefHeight="39.0" prefWidth="45.0" style="-fx-background-color: #00bfff;" text="&lt;&lt;" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="AffecterBtn" layoutX="741.0" layoutY="250.0" onAction="#Affecter" prefHeight="39.0" prefWidth="45.0" style="-fx-background-color: #00bfff;" text="&gt;&gt;" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </JFXButton>
+      <JFXButton fx:id="AffichéEquipeNonValidéBtn" layoutX="911.0" layoutY="38.0" onAction="#AfficherEquipeBtn" prefHeight="29.0" prefWidth="223.0" style="-fx-background-color: #00bfff;" text="Afficher les Equipes Non validés" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="DesignationTXT" layoutX="24.0" layoutY="87.0" prefHeight="25.0" prefWidth="163.0" promptText="Désignation" />
+      <ScrollPane layoutX="793.0" layoutY="125.0">
+         <content>
+                <TableView fx:id="TableEtdEquipe" onMouseReleased="#ClickTableEquipeItem3" prefHeight="527.0" prefWidth="366.0" stylesheets="@../CSS/TableView.css">
+                    <columns>
+                        <TableColumn fx:id="MatriculeEtdEquipeCol" prefWidth="69.0" text="Matricule" />
+                        <TableColumn fx:id="NomEtdEquipeCol" prefWidth="55.0" text="Nom" />
+                        <TableColumn fx:id="PrenomEtdEquipeCol" prefWidth="72.0" text="Prénom" />
+                        <TableColumn fx:id="EmailEtdEquipeCol" prefWidth="53.0" text="Email" />
+                        <TableColumn fx:id="MoyenneEtdEquipeCol" prefWidth="68.0" text="Moyenne" />
+                        <TableColumn fx:id="GroupeEtdEquipeCol" text="Groupe" />
+                    </columns>
+                </TableView>
+         </content>
+      </ScrollPane>
+    </children>
+</AnchorPane>

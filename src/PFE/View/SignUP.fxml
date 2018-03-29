@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="696.0" prefWidth="433.0" style="-fx-background-color: #fff; -fx-border-width: 4px; -fx-border-color: #4d4d4d;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.SignUP">
+   <children>
+      <JFXTextField fx:id="NomAdmin" focusColor="#4d4d4d" labelFloat="true" layoutX="96.0" layoutY="91.0" prefHeight="39.0" prefWidth="303.0" promptText="Nom">
+         <font>
+            <Font size="18.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="PrenomAdmin" focusColor="#4d4d4d" labelFloat="true" layoutX="94.0" layoutY="156.0" prefHeight="39.0" prefWidth="303.0" promptText="Prénom">
+         <font>
+            <Font size="18.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="EmailAdmin" focusColor="#4d4d4d" labelFloat="true" layoutX="94.0" layoutY="225.0" prefHeight="39.0" prefWidth="303.0" promptText="Email">
+         <font>
+            <Font size="18.0" />
+         </font></JFXTextField>
+      <JFXDatePicker fx:id="DateNAdmin" defaultColor="#4d4d4d" layoutX="94.0" layoutY="294.0" overLay="true" prefHeight="39.0" prefWidth="303.0" promptText="Date de naissance" />
+      <JFXTextField fx:id="UsernameAdmin" focusColor="#4d4d4d" labelFloat="true" layoutX="94.0" layoutY="370.0" prefHeight="39.0" prefWidth="303.0" promptText="Nom d'utilisateur">
+         <font>
+            <Font size="18.0" />
+         </font></JFXTextField>
+      <JFXPasswordField fx:id="PasswordAdmin" focusColor="#4d4d4d" labelFloat="true" layoutX="94.0" layoutY="442.0" prefHeight="39.0" prefWidth="303.0" promptText="Mot de passe">
+         <font>
+            <Font size="18.0" />
+         </font></JFXPasswordField>
+      <JFXPasswordField fx:id="ConfirmPasswordAdmin" focusColor="#4d4d4d" labelFloat="true" layoutX="93.0" layoutY="508.0" prefHeight="39.0" prefWidth="303.0" promptText="Confirmer votre mot de passe">
+         <font>
+            <Font size="18.0" />
+         </font></JFXPasswordField>
+      <Label fx:id="lblClose" layoutX="472.0" layoutY="5.0" text="X" textFill="#4d4d4d">
+         <font>
+            <Font name="Arial Black" size="15.0" />
+         </font></Label>
+      <JFXButton fx:id="InscrireButton" buttonType="RAISED" layoutX="200.0" layoutY="579.0" onAction="#Signup" prefHeight="39.0" prefWidth="94.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #4059a9; -fx-border-style: solid inside; -fx-background-radius: 5;" text="Inscrire">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="PaneData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1165.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.GestionScolaritéController">
+    <children>
+        <Text fill="DEEPSKYBLUE" layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion de scolarité">
+            <font>
+                <Font name="Segoe UI Semilight" size="48.0" />
+            </font>
+        </Text>
+        <ScrollPane layoutY="125.0">
+            <content>
+                <TableView fx:id="PromoTable" onMouseClicked="#ClickTableItem" prefHeight="525.0" prefWidth="631.0" stylesheets="@../CSS/TableView.css">
+                    <columns>
+                        <TableColumn fx:id="NumPromoCol" prefWidth="42.0" text="#ID" />
+                        <TableColumn fx:id="DesignationPromoCol" prefWidth="113.99996948242188" text="Désignation" />
+                        <TableColumn fx:id="NbrEtdPromoCol" prefWidth="139.00003051757812" text="Nombre des étudiants" />
+                        <TableColumn fx:id="CyclePromoCol" prefWidth="86.0" text="Cycle" />
+                        <TableColumn fx:id="NiveauPromoCol" prefWidth="82.0" text="Niveau" />
+                        <TableColumn fx:id="CodeOptionPromoCol" minWidth="2.0" prefWidth="86.0" text="Code Option" />
+                        <TableColumn fx:id="AnneePromoCol" prefWidth="82.0" text="Année" />
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu fx:id="ContxtmenuPromo">
+                            <items>
+                                <MenuItem fx:id="AddSectionMENU" mnemonicParsing="false" onAction="#AddSectionPane" text="Ajouter une section" />
+                                <MenuItem fx:id="DeletePromoMENU" mnemonicParsing="false" onAction="#DeletePromo" text="Supprimer la promotion" />
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </TableView>
+            </content>
+        </ScrollPane>
+        <Label layoutX="14.0" layoutY="89.0" prefHeight="17.0" prefWidth="99.0" text="Choisir l'année:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <JFXComboBox fx:id="AnneeCombo" focusColor="DEEPSKYBLUE" layoutX="113.0" layoutY="85.0" prefHeight="25.0" prefWidth="99.0" promptText="Année" unFocusColor="DEEPSKYBLUE" />
+        <AnchorPane fx:id="PaneTxt" layoutX="659.0" layoutY="125.0" prefHeight="326.0" prefWidth="468.0" style="-fx-border-color: #00bfff; -fx-border-radius: 20; -fx-border-width: 1.5;">
+            <children>
+                <Label layoutX="57.0" layoutY="77.0" text="Nombre des étudiants:">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="57.0" layoutY="181.0" text="Niveau:">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="57.0" layoutY="129.0" text="Cycle:">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <JFXTextField fx:id="DesignationPromo" editable="false" layoutX="221.0" layoutY="25.0" prefHeight="25.0" prefWidth="222.0" />
+                <JFXTextField fx:id="Nbr_etdTXT" layoutX="221.0" layoutY="77.0" />
+                <JFXComboBox fx:id="cycleCombo" layoutX="221.0" layoutY="129.0" onAction="#NiveauChoice" prefHeight="25.0" prefWidth="222.0" />
+                <JFXComboBox fx:id="niveauCombo" layoutX="221.0" layoutY="181.0" prefHeight="25.0" prefWidth="222.0" />
+                <JFXButton fx:id="AddPromoBTN" layoutX="14.0" layoutY="281.0" onAction="#AddPromo" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #00bfff;" text="Ajouter" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="UpdatePromoBTN" layoutX="116.0" layoutY="281.0" onAction="#UpdatePromo" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #00bfff;" text="Modifier" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ViderBtn" layoutX="218.0" layoutY="281.0" onAction="#Clear" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #00bfff;" text="Vider" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </JFXButton>
+                <Label layoutX="57.0" layoutY="25.0" text="Désignation :">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="57.0" layoutY="233.0" text="Option:">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <JFXComboBox fx:id="OptionCombo" layoutX="221.0" layoutY="233.0" prefHeight="25.0" prefWidth="135.0" />
+                <Hyperlink fx:id="AddElementBtn" layoutX="317.0" layoutY="285.0" onAction="#AddElementView" prefHeight="23.0" prefWidth="171.0" text="Ajouter elements d'évalutaion" />
+                <Hyperlink fx:id="AddOptionBtn" layoutX="371.0" layoutY="239.0" onAction="#AddOptionView" prefHeight="23.0" prefWidth="91.0" text="Ajouter Option" />
+            </children>
+        </AnchorPane>
+      <ScrollPane layoutX="659.0" layoutY="451.0">
+         <content>
+              <TableView fx:id="Section_table" prefHeight="201.0" prefWidth="468.0" stylesheets="@../CSS/TableView.css">
+                  <columns>
+                      <TableColumn fx:id="CodeSectionCol" prefWidth="87.0" text="Code" />
+                      <TableColumn fx:id="DesignationSectionCol" prefWidth="104.0" text="Désignation" />
+                      <TableColumn fx:id="Nbr_etdSectionCol" prefWidth="143.0" text="Nombre des étudiants" />
+                      <TableColumn fx:id="num_promoSectionCol" prefWidth="209.0" text="Numéro de promotion" />
+                  </columns>
+              </TableView>
+         </content>
+      </ScrollPane>
+        <JFXTextField fx:id="Chercher_txt" focusColor="DEEPSKYBLUE" layoutX="289.0" layoutY="85.0" onKeyPressed="#ChercherPromo" prefHeight="25.0" prefWidth="198.0" promptText="Chercher ici" unFocusColor="DEEPSKYBLUE" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="PaneData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1167.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.GestionSoutenanceController">
+   <children>
+      <Text fill="DEEPSKYBLUE" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des Soutenances">
+         <font>
+            <Font name="Segoe UI Semilight" size="48.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="AddSoutBtn" layoutX="37.0" layoutY="521.0" onAction="#AddSout" prefHeight="29.0" prefWidth="135.0" style="-fx-background-color: #00bfff;" text="Créer Soutenance" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <ScrollPane layoutX="283.0" layoutY="435.0" prefHeight="188.0" prefWidth="713.0">
+         <content>
+            <TableView fx:id="TableEenseigJury" prefHeight="186.0" prefWidth="693.0" stylesheets="@../CSS/TableView.css">
+              <columns>
+                 <TableColumn fx:id="MatriculEnsCol" prefWidth="95.0" text="    Matricule" />
+                 <TableColumn fx:id="NomEnsCol" prefWidth="115.0" text="          Nom" />
+                 <TableColumn fx:id="PrenomEnsCol" prefWidth="107.0" text="      Prénom" />
+                 <TableColumn fx:id="EmailEnsCol" prefWidth="122.0" text="           Email" />
+                 <TableColumn fx:id="SpécialitéEnsCol" prefWidth="124.0" text="          Spécialité" />
+                 <TableColumn fx:id="GradensCol" prefWidth="129.0" text="           Grade" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <JFXTextField fx:id="DesignationSalle" layoutX="1005.0" layoutY="236.0" prefHeight="25.0" prefWidth="148.0" promptText="Nom de salle " />
+      <JFXButton fx:id="Deletebtn" layoutX="37.0" layoutY="561.0" onAction="#Delete" prefHeight="29.0" prefWidth="135.0" style="-fx-background-color: #00bfff;" text="Annuler Soutenance" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="MatriculeSout" layoutX="549.0" layoutY="90.0" prefHeight="25.0" prefWidth="162.0" promptText="Matricule" />
+      <ScrollPane layoutX="287.0" layoutY="127.0">
+         <content>
+            <TableView fx:id="TableSoutenance" onMouseReleased="#ClickTableSoutItem2" prefHeight="295.0" prefWidth="711.0" stylesheets="@../CSS/TableView.css">
+               <columns>
+                  <TableColumn fx:id="Code_SoutenaceCol" prefWidth="104.0" text="Code_Soutenace" />
+                  <TableColumn fx:id="JourCol" prefWidth="84.0" text="      Jour" />
+                  <TableColumn fx:id="Heure_DCol" prefWidth="96.0" text="     Heure_D" />
+                  <TableColumn fx:id="Heure_FCol" prefWidth="96.0" text="      Heure_F " />
+                  <TableColumn fx:id="Numero_SalleCol" prefWidth="109.0" text="   Numero_Salle" />
+                  <TableColumn fx:id="Equipe_NumeroCol" prefWidth="114.0" text="Numero_Equipe" />
+                  <TableColumn fx:id="Jury_NumeroCol" prefWidth="107.0" text="Numero_Jury" />
+               </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <JFXTextField fx:id="CodeSout" layoutX="37.0" layoutY="204.0" prefHeight="25.0" prefWidth="226.0" promptText="Matricule de soutennace " />
+      <JFXDatePicker fx:id="JoureSout" layoutX="37.0" layoutY="250.0" prefHeight="28.0" prefWidth="226.0" promptText="Joure de Soutenance" />
+      <JFXTimePicker fx:id="Heure_DSout" layoutX="37.0" layoutY="300.0" prefHeight="28.0" prefWidth="226.0" promptText="Heure de debut" />
+      <JFXTimePicker fx:id="Heure_FSout" layoutX="37.0" layoutY="356.0" prefHeight="25.0" prefWidth="226.0" promptText="Heure de fin" />
+      <JFXComboBox fx:id="promo_code" layoutX="398.0" layoutY="90.0" onAction="#LoadDataTableSoutenance" prefHeight="25.0" prefWidth="108.0" promptText="Promotion" />
+      <JFXComboBox fx:id="PromoCombo" layoutX="37.0" layoutY="477.0" onAction="#LoadDataTableEnseignant" prefHeight="25.0" prefWidth="142.0" promptText="Juries" />
+      <JFXComboBox fx:id="Equipe_Numero" layoutX="150.0" layoutY="410.0" prefHeight="25.0" prefWidth="108.0" promptText="Numéro d'équipe" />
+      <JFXComboBox fx:id="Salle_NumeroSout" layoutX="37.0" layoutY="410.0" prefHeight="25.0" prefWidth="98.0" promptText="les Salle" />
+      <JFXButton fx:id="AjouterSalleBtn1" layoutX="1005.0" layoutY="284.0" onAction="#AddSalle" prefHeight="29.0" prefWidth="135.0" style="-fx-background-color: #00bfff;" text="Ajouter Salle" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+
+   </children>
+</AnchorPane>

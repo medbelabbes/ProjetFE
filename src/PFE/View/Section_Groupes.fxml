@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1167.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.Section_GroupeController">
+   <children>
+      <Text fill="DEEPSKYBLUE" layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sections et groupes">
+         <font>
+            <Font name="Segoe UI Semilight" size="48.0" />
+         </font>
+      </Text>
+      <ScrollPane layoutY="154.0">
+         <content>
+            <TableView fx:id="SectionTable" onMouseClicked="#ClickTableItem" prefHeight="479.0" prefWidth="417.0" stylesheets="@../CSS/TableView.css">
+               <columns>
+                  <TableColumn fx:id="CodeSectionCol" prefWidth="54.0" text="Code" />
+                  <TableColumn fx:id="DésignationSectionCol" prefWidth="89.99996948242188" text="Désignation" />
+                  <TableColumn fx:id="NbrEtdSectionCol" prefWidth="134.0" text="Nombre des étudiants" />
+                  <TableColumn fx:id="NumPromoSectionCol" prefWidth="290.0" text="Numéro de promotion" />
+               </columns>
+               <contextMenu>
+                  <ContextMenu fx:id="ContxtmenuSection">
+                     <items>
+                        <MenuItem fx:id="AddGroupMENU" mnemonicParsing="false" onAction="#AddGroupeWindow" text="Ajouter un groupe" />
+                        <MenuItem fx:id="DeletesectionMENU" mnemonicParsing="false" onAction="#DeleteSection" text="Supprimer la section" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <Label layoutX="14.0" layoutY="89.0" prefHeight="17.0" prefWidth="99.0" text="Promotion:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="promoCombo" focusColor="DEEPSKYBLUE" layoutX="113.0" layoutY="87.0" prefHeight="25.0" prefWidth="99.0" promptText="Promotion" unFocusColor="DEEPSKYBLUE" />
+      <JFXTextField fx:id="ChercherSection" focusColor="DEEPSKYBLUE" layoutX="253.0" layoutY="87.0" onKeyPressed="#ChercherSection" prefHeight="25.0" prefWidth="155.0" promptText="Chercher ici" unFocusColor="DEEPSKYBLUE" />
+      <ScrollPane layoutX="513.0" layoutY="154.0" />
+      <Label layoutX="14.0" layoutY="128.0" prefHeight="17.0" prefWidth="118.0" text="Table des sections:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="513.0" layoutY="128.0" prefHeight="17.0" prefWidth="118.0" text="Table des groupes:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="791.0" layoutY="294.0" prefHeight="17.0" prefWidth="118.0" text="Code de promotion:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="791.0" layoutY="220.0" prefHeight="17.0" prefWidth="135.0" text="Nombre des étudiants:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="791.0" layoutY="151.0" prefHeight="17.0" prefWidth="135.0" text="Désignation du section:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="Designation_sectionTXT" layoutX="945.0" layoutY="145.0" />
+      <JFXTextField fx:id="Nbr_Etd_Section" layoutX="945.0" layoutY="214.0" />
+      <JFXTextField fx:id="CodePromoSectionTXT" layoutX="945.0" layoutY="288.0" />
+      <JFXButton fx:id="AddSectionBTN1" layoutX="793.0" layoutY="359.0" onAction="#AddSection" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #00bfff;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="UpdateSectionBTN1" layoutX="895.0" layoutY="359.0" onAction="#UpdateSection" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #00bfff;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="ViderBtn1" layoutX="997.0" layoutY="359.0" onAction="#Clear" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #00bfff;" text="Vider" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <ScrollPane layoutX="432.0" layoutY="155.0">
+         <content>
+            <TableView fx:id="groupeTable" prefHeight="479.0" prefWidth="322.0" stylesheets="@../CSS/TableView.css">
+              <columns>
+                <TableColumn fx:id="CodeGroupeCol" prefWidth="56.0" text="Code" />
+                  <TableColumn fx:id="DesignationGroupCol" prefWidth="82.0" text="Désignation " />
+                <TableColumn fx:id="nbr_EtdGroupeCol" prefWidth="104.0" text="Nombre des étudiants" />
+                  <TableColumn fx:id="CodeSectionGroupeCol" prefWidth="79.0" text="Code du section" />
+              </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Modifier le groupe" />
+                        <MenuItem mnemonicParsing="false" text="Supprimer le grmohamhoupe" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

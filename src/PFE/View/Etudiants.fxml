@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="PaneTableEtd" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1167.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.EtudiantController">
+   <children>
+      <Text fill="DEEPSKYBLUE" layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etudiants">
+         <font>
+            <Font name="Segoe UI Semilight" size="48.0" />
+         </font>
+      </Text>
+      <ScrollPane layoutY="98.0">
+         <content>
+            <TableView fx:id="tableData" onMouseReleased="#ClickTableEquipeItem1" prefHeight="554.0" prefWidth="1165.0" stylesheets="@../CSS/TableView.css">
+              <columns>
+                  <TableColumn fx:id="MatriculeEtdCol" prefWidth="63.000030517578125" text="Matricule" />
+                  <TableColumn fx:id="NomEtdCol" prefWidth="49.0" text="Nom" />
+                  <TableColumn fx:id="PrenomEtdCol" prefWidth="71.0" text="Prénom" />
+                  <TableColumn fx:id="SexeEtdCol" prefWidth="44.0" text="Sexe" />
+                  <TableColumn fx:id="DateNEtdCol" prefWidth="111.0" text="Date de naissance" />
+                  <TableColumn fx:id="LieuNEtdCol" prefWidth="108.0" text="Lieu de naissance" />
+                  <TableColumn fx:id="EmailEtdCol" prefWidth="129.0" text="Adresse électronique" />
+                  <TableColumn fx:id="AdresseEtdCol" minWidth="0.0" prefWidth="81.0" text="Adresse" />
+                  <TableColumn fx:id="WillayaEtdCol" prefWidth="48.0" text="Willaya" />
+                  <TableColumn fx:id="MoyenneEtdCol" prefWidth="78.0" text="Moyenne" />
+                  <TableColumn fx:id="UsernameEtdCol" prefWidth="92.0" text="Nom d'utilisateur" />
+                  <TableColumn fx:id="QualiteEtdCol" prefWidth="59.0" text="Qualité" />
+                  <TableColumn fx:id="NumGroupeEtdCol" prefWidth="68.0" text="Groupe" />
+                  <TableColumn fx:id="NumeEquipeEtdCol" prefWidth="51.0" text="Equipe" />
+                  <TableColumn fx:id="EtatEtdCol" prefWidth="24.0" text="Etat" />
+                  <TableColumn fx:id="PromoIDEtdCol" prefWidth="87.0" text="ID Promotion" />
+              </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="SuppEtdMenu" mnemonicParsing="false" onAction="#SupprimerEtudiant" text="Supprimer" />
+                        <MenuItem fx:id="BloqueETDMenu" mnemonicParsing="false" onAction="#BloquerEtudiant" text="Bloquer" />
+                        <MenuItem fx:id="AfficherEtdDataMenu" mnemonicParsing="false" onAction="#AfficherEtudiant" text="Afficher l'étudiant" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <JFXButton fx:id="AddBtn" layoutX="1069.0" layoutY="62.0" onAction="#Ajouter" prefHeight="31.0" prefWidth="84.0" style="-fx-background-color: #00BFFF;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="EditBtn" layoutX="976.0" layoutY="63.0" onAction="#ModifierETD" prefHeight="31.0" prefWidth="84.0" style="-fx-background-color: #00BFFF;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox fx:id="PromoCombo" layoutX="23.0" layoutY="66.0" prefHeight="25.0" prefWidth="189.0" promptText="Promotion" />
+      <JFXButton fx:id="ImportBtn" layoutX="883.0" layoutY="63.0" onAction="#ImportCSV" prefHeight="31.0" prefWidth="84.0" style="-fx-background-color: #00BFFF;" text="Importer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="SendMailBtn" layoutX="765.0" layoutY="63.0" onAction="#SendMail" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #00BFFF;" text="Envoyer Mails" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox fx:id="ChercherParCombo" layoutX="238.0" layoutY="67.0" prefHeight="25.0" prefWidth="158.0" promptText="Chercher par :" />
+      <JFXTextField fx:id="ChercherTXt" layoutX="420.0" layoutY="67.0" onKeyPressed="#ChercherEtudiant" prefHeight="25.0" prefWidth="197.0" promptText="Chercher" />
+   </children>
+</AnchorPane>

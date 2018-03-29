@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="236.0" prefWidth="362.0" style="-fx-border-color: #00bfff; -fx-border-width: 2.5;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.GroupeController">
+   <children>
+      <JFXTextField fx:id="NbrEtdGroup" layoutX="104.0" layoutY="93.0" prefHeight="25.0" prefWidth="154.0" promptText="Nombre des étudiants" />
+      <JFXButton fx:id="AddGroupeBtn" layoutX="95.0" layoutY="159.0" onAction="#AddGroupe" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #00bfff;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="AnnulerBtn" layoutX="185.0" layoutY="159.0" onAction="#Annuler" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #00bfff;" text="Annuler" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="DesignationEtdGroup" layoutX="104.0" layoutY="43.0" prefHeight="25.0" prefWidth="154.0" promptText="Désignation" />
+   </children>
+</AnchorPane>

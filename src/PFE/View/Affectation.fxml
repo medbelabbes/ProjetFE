@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="PaneData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1031.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.AffectationController">
+   <children>
+      <Text fill="DEEPSKYBLUE" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Affectation des projets:">
+         <font>
+            <Font name="Segoe UI Semilight" size="48.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="PromoCombo" layoutX="14.0" layoutY="85.0" prefHeight="25.0" prefWidth="204.0" promptText="Promotion" />
+      <ScrollPane layoutY="125.0">
+         <content>
+            <TableView fx:id="EquipeTable" onMouseReleased="#ClickTableItem" prefHeight="527.0" prefWidth="617.0" stylesheets="@../CSS/TableView.css">
+               <columns>
+                  <TableColumn fx:id="NumeroEquipeCol" prefWidth="81.0" text="Numéro d'équipe" />
+                  <TableColumn fx:id="NbrEtdEquipeCol" prefWidth="118.0" text="Nombre des étudiants" />
+                  <TableColumn fx:id="MoyenneEquipeCol" prefWidth="92.0" text="Moyenne" />
+                  <TableColumn fx:id="Code_ProjetEquipeCol" prefWidth="133.0" text="Code de projet" />
+                  <TableColumn fx:id="ProjetEquipeCol" prefWidth="82.0" text="Projet" />
+                  <TableColumn fx:id="PromotionEquipeCol" prefWidth="110.0" text="Promotion" />
+               </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <JFXButton fx:id="AffecterBtn" layoutX="516.0" layoutY="83.0" onAction="#Affecter" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #00bfff;" text="Affecter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="ProjetTXT" layoutX="674.0" layoutY="83.0" prefHeight="29.0" prefWidth="301.0" style="-fx-background-radius: 0,0; -fx-background-color: white; -fx-border-color: gray; -fx-background-insets: 0; -fx-highlight-fill: #008287; -fx-highlight-text-fill: white; -fx-prompt-text-fill: #818181;" />
+      <ScrollPane layoutX="661.0" layoutY="126.0">
+         <content>
+            <TableView fx:id="Table_Choix" prefHeight="527.0" prefWidth="326.0" stylesheets="@../CSS/TableView.css">
+               <columns>
+                  <TableColumn fx:id="NumeroChoixCol" prefWidth="116.0" text="Numéro d'équipe" />
+                  <TableColumn fx:id="CodeProjetChoixCol" prefWidth="95.0" text="Code de projet" />
+                  <TableColumn fx:id="ProjetChoixCol" prefWidth="59.0" text="Projet" />
+                  <TableColumn fx:id="OrdreChoixCol" prefWidth="55.0" text="Ordre" />
+               </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="PaneData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1167.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.ParamétresController">
+   <children>
+      <Text fill="DEEPSKYBLUE" layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paramétres">
+         <font>
+            <Font name="Segoe UI Semilight" size="48.0" />
+         </font>
+      </Text>
+      <ScrollPane layoutY="137.0">
+         <content>
+            <TableView fx:id="ParametreTable" prefHeight="200.0" prefWidth="714.0">
+              <columns>
+                <TableColumn fx:id="IdParametreCol" prefWidth="75.0" text="#ID" />
+                <TableColumn fx:id="PromoParametreCol" prefWidth="128.0" text="Code de Promotion" />
+                  <TableColumn fx:id="MaxParametreCol" prefWidth="75.0" text="Max" />
+                  <TableColumn fx:id="MinParametreCol" prefWidth="75.0" text="Min" />
+                  <TableColumn fx:id="Mode_AffecParametreCol" prefWidth="112.0" text="Mode Affectation" />
+                  <TableColumn fx:id="Nbr_CHoixParametreCol" prefWidth="85.0" text="Nombre des choix" />
+                  <TableColumn fx:id="DuréeParametreCol" prefWidth="86.0" text="Durée" />
+                  <TableColumn fx:id="CoeffiParametreCol" prefWidth="77.0" text="Coefficient" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <JFXComboBox fx:id="AnneeCombo" layoutX="14.0" layoutY="90.0" prefHeight="25.0" prefWidth="150.0" promptText="Année" />
+      <Label layoutX="761.0" layoutY="133.0" text="Promotion:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="761.0" layoutY="182.0" text="Nombre des étudiants maximal par équipe :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="761.0" layoutY="233.0" text="Nombre des étudiants minimal par équipe :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="761.0" layoutY="342.0" text="Nombre des choix possible :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="761.0" layoutY="289.0" text="Mode d'affectation :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="761.0" layoutY="397.0" text="Durée :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="761.0" layoutY="454.0" text="Coefficient:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="PromoCombo" layoutX="1024.0" layoutY="129.0" prefHeight="25.0" prefWidth="116.0" />
+      <Spinner fx:id="Nbr_Max_Spinner" layoutX="1024.0" layoutY="178.0" prefHeight="25.0" prefWidth="65.0" />
+      <Spinner fx:id="Nbr_Min_Spinner" layoutX="1024.0" layoutY="229.0" prefHeight="25.0" prefWidth="65.0" />
+      <Spinner fx:id="Nbr_Choix_Spinner" layoutX="1024.0" layoutY="338.0" prefHeight="25.0" prefWidth="65.0" />
+      <Spinner fx:id="Coeffi_Spinner" layoutX="1024.0" layoutY="450.0" prefHeight="25.0" prefWidth="65.0" />
+      <JFXComboBox fx:id="Mode_Affec_Combo" layoutX="1024.0" layoutY="285.0" prefHeight="25.0" prefWidth="116.0" />
+      <JFXTextField fx:id="DuréeTxt" layoutX="1021.0" layoutY="393.0" prefHeight="25.0" prefWidth="122.0" />
+      <JFXButton fx:id="SaveBtn" layoutX="809.0" layoutY="516.0" onAction="#Save" style="-fx-background-color: #00bfff;" text="Enregistrer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="SupprimerBtn" layoutX="1015.0" layoutY="516.0" style="-fx-background-color: #00bfff;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="ModifierBtn" layoutX="920.0" layoutY="516.0" style="-fx-background-color: #00bfff;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

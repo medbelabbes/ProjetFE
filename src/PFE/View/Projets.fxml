@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="PaneData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1167.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PFE.Controllers.ProjectController">
+   <children>
+      <Text fill="DEEPSKYBLUE" layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projets:">
+         <font>
+            <Font name="Segoe UI Semilight" size="48.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="AnneeCombo" layoutX="14.0" layoutY="77.0" onAction="#LoadDataComboPromo" prefHeight="25.0" prefWidth="139.0" promptText="Année universitaire" />
+      <JFXComboBox fx:id="PromoCombo" layoutX="213.0" layoutY="77.0" onAction="#LoadDataTable" prefHeight="25.0" prefWidth="139.0" promptText="Promotion" />
+      <ScrollPane layoutY="125.0">
+         <content>
+            <TableView fx:id="ProjectTable" onMouseClicked="#ClickTable" prefHeight="524.0" prefWidth="1165.0" stylesheets="@../CSS/TableView.css">
+              <columns>
+                <TableColumn fx:id="CodeProjectCol" prefWidth="75.0" text="Code" />
+                <TableColumn fx:id="DesignationProjectCol" prefWidth="75.0" text="Désignation" />
+                  <TableColumn fx:id="SpecialiteProjectCol" prefWidth="75.0" text="Spécialité" />
+                  <TableColumn fx:id="ReseumeProjectCol" prefWidth="75.0" text="Resumé" />
+                  <TableColumn fx:id="TechnoProjectCol" prefWidth="103.0" text="Technologies" />
+                  <TableColumn fx:id="OutilProjectCol" prefWidth="47.0" text="Outils" />
+                  <TableColumn fx:id="PrerequisProjectCol" prefWidth="89.0" text="Prérequis" />
+                  <TableColumn fx:id="PlanProjectCol" prefWidth="105.0" text="Plan de Travail" />
+                  <TableColumn fx:id="DureeProjectCol" prefWidth="75.0" text="Durée" />
+                  <TableColumn fx:id="NbrEquipeProjectCol" prefWidth="209.0" text="Nombre possible des équipes" />
+                  <TableColumn fx:id="CodePromoProjectCol" prefWidth="129.0" text="Code du promotion" />
+                  <TableColumn fx:id="ValidationProjectCol" prefWidth="167.0" text="Validation" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <JFXTextField fx:id="ChercheBtn" layoutX="405.0" layoutY="77.0" promptText="Chercher ici" />
+      <JFXButton fx:id="AfficherProjetBtn" layoutX="1022.0" layoutY="77.0" onAction="#DesplayProject" prefHeight="32.0" prefWidth="135.0" style="-fx-background-color: #00bfff;" text="Afficher le Projet" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
